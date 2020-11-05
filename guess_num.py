@@ -13,6 +13,24 @@
 
 Тебе может понадобится модуль random, цикл while и ветвления
 """
-
+import random
 if __name__ == '__main__':
-    pass
+    random_number = random.randint(0, 1_000_000)
+    your_number = input("Приветствую тебя. Хочешь отгадать мое число? Оно находится в диапазоне от 0 до 1_000_000 ")
+    while True:
+        if your_number.isdigit():
+            if int(your_number) > random_number:
+                your_number = input("Твое число больше моего. Попробуй еще раз:)  ")
+            elif int(your_number) < random_number:
+                your_number = input("Твое число меньше моего. Попробуй еще раз:)  ")
+            elif int(your_number) < 0 or int(your_number) > 1_000_000:
+                your_number = input("Твое число не входит в диапазон чисел, где находится мое. Попробуй еще раз:) ")
+            elif int(your_number) == random_number:
+                print("Ты первый, кто победил меня. Загадывай любое желание:) ")
+                break
+        elif your_number == "" or your_number == "exit":
+            print("Ты ушел побежденным и это не делает тебе чести:) ")
+            break
+        else:    
+            your_number = input("Ты ввел все, что угодно, кроме числа. Попробуй еще раз, уважаемый:)  ")
+        
