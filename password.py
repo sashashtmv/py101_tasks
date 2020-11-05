@@ -7,4 +7,8 @@
 """
 
 if __name__ == '__main__':
-    pass
+    parol = input("Давайте проверим ваш пароль на безопасность? Введите его сюда, пожалуйста ")
+    if(len(parol) >= 8 and parol.isalnum() and not parol.isalpha() and not parol.isdigit()):
+        print("Ваш пароль сложный. Вы на верном пути")
+    else:
+        print("Придумайте более безопасный пароль иначе Ваши данные под угрозой")
